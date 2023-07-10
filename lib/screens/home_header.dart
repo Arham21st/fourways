@@ -8,8 +8,10 @@ import 'package:get/get.dart';
 class HomeHeader extends StatelessWidget {
   
   dynamic data;
+  bool? jobText;
+  bool? refreshIcon;
   
-  HomeHeader({super.key, this.data});
+  HomeHeader({super.key, this.data,this.jobText=false,this.refreshIcon=false});
 
   @override
   Widget build(BuildContext context) {
@@ -18,21 +20,37 @@ class HomeHeader extends StatelessWidget {
             height: Dimensions.height20*11,
             color: AppColors.background,
             child: Padding(
-              padding: EdgeInsets.only(left:Dimensions.height20),
+              padding: EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   SizedBox(height: Dimensions.height20,),
-                  InkWell(
-                    onTap: () {
-                      Get.toNamed(data);
-                    },
-                    child: Image(image: AssetImage("assets/images/Slide Up.png"))),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.toNamed(data);
+                        },
+                        child: Image(image: AssetImage("assets/images/Slide Up.png"))
+                        ),
+                        if(jobText==true)
+                        HeadingText(text: "Jobs",size: Dimensions.font20,fontWeight: FontWeight.bold,)
+                    ],
+                  ),
                   SizedBox(height: Dimensions.height30,),
                   HeadingText(text: "Welcome,",size: Dimensions.font20,fontWeight: FontWeight.w600,),
                   HeadingText(text: "John Doe",fontWeight: FontWeight.w600,),
                   SizedBox(height: Dimensions.height20,),
-                  HeadingText(text: "#SK21BH10",size: Dimensions.font16,fontWeight: FontWeight.w500,color: AppColors.mainColor,)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      HeadingText(text: "#SK21BH10",size: Dimensions.font16,fontWeight: FontWeight.w800,color: AppColors.mainColor,),
+                      if(refreshIcon==true)
+                      Icon(Icons.refresh_outlined,color: Colors.grey.shade700,size: Dimensions.height30,) 
+                    
+                    ],
+                  )
                 ],
               ),
             ),

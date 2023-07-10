@@ -53,6 +53,7 @@ final ButtonStyle smallButton = ElevatedButton.styleFrom(
 
     
     shape: RoundedRectangleBorder(
+    side: BorderSide(color: Colors.white),
     borderRadius: BorderRadius.circular(Dimensions.height15),),
     foregroundColor: AppColors.activeTile,
     backgroundColor: AppColors.activeTile,
@@ -75,7 +76,7 @@ final ButtonStyle whiteButton = ElevatedButton.styleFrom(
     //surfaceTintColor: Colors.brown,
     elevation: Dimensions.height5,
     //shadowColor: Colors.brown,
-    fixedSize: Size(Dimensions.height20*8, Dimensions.height20*2.8)
+    minimumSize: Size(Dimensions.height20*8, Dimensions.height20*2.8)
     //maximumSize: Size(Dimensions.height20*15, Dimensions.height20*6)
 
 );

@@ -54,6 +54,7 @@ class MainPage extends StatelessWidget {
                       style: smallButton,),
                     ],
                   ),
+                 
                   SizedBox(height: Dimensions.height20,),
                   HeadingText(text: "#SK21BH10",size: Dimensions.font16,fontWeight: FontWeight.w500,color: AppColors.mainColor,)
                 ],
@@ -101,16 +102,21 @@ class MainPage extends StatelessWidget {
                     image: DecorationImage(image: AssetImage("assets/images/img3.png"),fit: BoxFit.cover)
                   ),),
               ),
-              Padding(
-                padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img4.png"),fit: BoxFit.cover)
-                  ),),
+              InkWell(
+                onTap: () {
+                  Get.toNamed(RoutesHelper.getJobs());
+                },
+                child: Padding(
+                  padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: DecorationImage(image: AssetImage("assets/images/img4.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
               Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),

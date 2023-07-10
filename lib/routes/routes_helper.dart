@@ -1,6 +1,7 @@
 
 
 
+import 'package:fourways/screens/jobs/jobs.dart';
 import 'package:fourways/screens/login_page.dart';
 import 'package:fourways/screens/main_page.dart';
 import 'package:fourways/screens/vehicle_info/select_vehicle.dart';
@@ -16,7 +17,7 @@ class RoutesHelper {
   static const String login = '/login-page';
   static const String details = '/vehicle-details';
   static const String mainPage = '/dashboard';
-  static const String payment = '/payment';
+  static const String jobs = '/jobs';
   static const String boardinPass = '/boarding-passt';
   // static const String popularItems = '/popular-Items';
   // static const String recommendedItems = '/recommended-Items';
@@ -27,19 +28,38 @@ class RoutesHelper {
   static String getLogin() => login;
   static String getVehicleDetails() => details;
   static String getMainPage() => mainPage;
-  static String getPayment() => payment;
+  static String getJobs() => jobs;
   static String getBoardingPass() => boardinPass;
   // static String getPopularProducts(int pageId, String page) => "$popularItems?pageId=$pageId&page=$page";
   // static String getRecommendedProducts(int pageId, String page) =>'$recommendedItems?pageId=$pageId&page=$page';
   // static String getCartPage() => '$cartPage';
 
   static List<GetPage> routes = [
-    GetPage(name: splash, page: () => const SplashScreen()),
-    GetPage(name: initial, page: () => const SelectVehicle()),
-    GetPage(name: login, page: () => const LoginPage()),
-     GetPage(name: details, page: () => const VehicleDetails()),
-     GetPage(name: mainPage, page: () => const MainPage()),
-    // GetPage(name: payment, page: () => const PaymentPage()),
+    GetPage(name: splash, page: () {
+      return const SplashScreen();
+      
+    }),
+    GetPage(name: initial, page: () {
+      return const SelectVehicle();
+      
+    },
+    transition: Transition.fadeIn),
+    GetPage(name: login, page: () {
+      return const LoginPage();
+    },
+    transition: Transition.fadeIn),
+     GetPage(name: details, page: () {
+       return const VehicleDetails();
+     },
+     transition: Transition.fadeIn),
+     GetPage(name: mainPage, page: () {
+       return const MainPage();
+     },
+     transition: Transition.fadeIn),
+     GetPage(name: jobs, page: () {
+       return const JobsDetails();
+     },
+     transition: Transition.fadeIn),
     // GetPage(name: boardinPass, page: () => const BoardingPass()),
   
     // GetPage(

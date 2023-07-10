@@ -27,7 +27,7 @@ class _VehicleDetailsState extends State<VehicleDetails> {
       body: SafeArea(
         child: Column(
           children: [
-            HomeHeader(data: RoutesHelper.getInitial()),
+            HomeHeader(data: RoutesHelper.getInitial(),),
             SizedBox(height: Dimensions.height30,),
             Row(
               children: [
