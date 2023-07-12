@@ -15,7 +15,7 @@ class PendingJobs extends StatelessWidget {
       return Padding(padding: EdgeInsets.all(Dimensions.height10),
       child: Container(
         width: double.maxFinite,
-        height: Dimensions.height20*15,
+        height: Dimensions.height20*14,
         decoration: BoxDecoration(
           color: AppColors.activeTile,
           borderRadius: BorderRadius.circular(Dimensions.height20)
@@ -28,35 +28,44 @@ class PendingJobs extends StatelessWidget {
               SizedBox(height: Dimensions.height20,),
               HeadingText(text: "HB Project Ltd",color: Colors.white,size: Dimensions.font20,fontWeight: FontWeight.bold,),
               SizedBox(height: Dimensions.height5,),
-              HeadingText(text: "Anytime 14 yard open exchange",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
+              HeadingText(text: "Anytime 14 yard open exchange",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Tip Site ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,), 
-                  HeadingText(text: "Home Ltd.",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
+                  HeadingText(text: "Tip Site:",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,), 
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Home Ltd.",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),
                 ],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Grade ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
-                  HeadingText(text: "Mixed C & D",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
+                  HeadingText(text: "Grade:   ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Mixed C & D",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),
                 ],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Status ",color: Colors.grey.shade200,size: Dimensions.font16,fontWeight: FontWeight.w600,),
-                  HeadingText(text: "Pending",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
-                ],
+                  HeadingText(text: "Status:  ",color: Colors.grey.shade200,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Pending",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Notes ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
-                  HeadingText(text: "Type your notes here...",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
-                
-                ],
+                  HeadingText(text: "Notes:   ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Type your notes here...",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),],
               ),
               SizedBox(height: Dimensions.height20,),
               Row(

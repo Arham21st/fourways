@@ -26,7 +26,7 @@ class _JobsDetailsState extends State<JobsDetails> {
         child: Column(
         children: [
           SizedBox(height: Dimensions.height10,),
-          HomeHeader(data: RoutesHelper.getMainPage(),jobText: true,refreshIcon: true,),
+          HomeHeader(backwaardRoute: RoutesHelper.getMainPage(),isText: true,refreshIcon: true,),
           SizedBox(height: Dimensions.height10,),
           Container(
               height: Dimensions.height20*2,

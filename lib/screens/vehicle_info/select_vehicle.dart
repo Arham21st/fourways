@@ -85,7 +85,7 @@ class _SelectVehicleState extends State<SelectVehicle> {
       body: SafeArea(
         child: Column(
           children: [
-            HomeHeader(data: RoutesHelper.getLogin()),
+            HomeHeader(backwaardRoute: RoutesHelper.getLogin()),
             SizedBox(height: Dimensions.height30,),
             Row(
               children: [
@@ -134,12 +134,13 @@ class _SelectVehicleState extends State<SelectVehicle> {
                       setState(() {
                         selectedValue = value;
                         
+                        
                       });
                     },
                     buttonStyleData: ButtonStyleData(
                       height: Dimensions.height20*2.5,
                       width: double.maxFinite,
-                      padding: const EdgeInsets.only(left: 14, right: 14),
+                      padding: EdgeInsets.only(left: Dimensions.height15, right: Dimensions.height15),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(14),
                         border: Border.all(

@@ -1,10 +1,13 @@
 
 
 
+import 'package:fourways/screens/jobs/clocking.dart';
 import 'package:fourways/screens/jobs/jobs.dart';
+import 'package:fourways/screens/jobs/sign_pod.dart';
 import 'package:fourways/screens/login_page.dart';
 import 'package:fourways/screens/main_page.dart';
 import 'package:fourways/screens/vehicle_info/select_vehicle.dart';
+import 'package:fourways/screens/vehicle_info/vehicle_check.dart';
 import 'package:fourways/screens/vehicle_info/vehicle_details.dart';
 import 'package:get/get.dart';
 
@@ -18,9 +21,9 @@ class RoutesHelper {
   static const String details = '/vehicle-details';
   static const String mainPage = '/dashboard';
   static const String jobs = '/jobs';
-  static const String boardinPass = '/boarding-passt';
-  // static const String popularItems = '/popular-Items';
-  // static const String recommendedItems = '/recommended-Items';
+  static const String signPOD = '/sign-POD';
+  static const String clocking = '/clocking';
+  static const String vehicleCheck = '/vehicle-check';
   // static const String cartPage = '/cart-page';
 
   static String getSplash() => splash;
@@ -29,7 +32,9 @@ class RoutesHelper {
   static String getVehicleDetails() => details;
   static String getMainPage() => mainPage;
   static String getJobs() => jobs;
-  static String getBoardingPass() => boardinPass;
+  static String getSignPOD() => signPOD;
+  static String getClocking() => clocking;
+  static String getVehicleCheck() => vehicleCheck;
   // static String getPopularProducts(int pageId, String page) => "$popularItems?pageId=$pageId&page=$page";
   // static String getRecommendedProducts(int pageId, String page) =>'$recommendedItems?pageId=$pageId&page=$page';
   // static String getCartPage() => '$cartPage';
@@ -39,28 +44,47 @@ class RoutesHelper {
       return const SplashScreen();
       
     }),
+    
     GetPage(name: initial, page: () {
       return const SelectVehicle();
       
     },
     transition: Transition.fadeIn),
+    
     GetPage(name: login, page: () {
       return const LoginPage();
     },
     transition: Transition.fadeIn),
+     
      GetPage(name: details, page: () {
        return const VehicleDetails();
      },
      transition: Transition.fadeIn),
+    
      GetPage(name: mainPage, page: () {
        return const MainPage();
      },
      transition: Transition.fadeIn),
+     
      GetPage(name: jobs, page: () {
        return const JobsDetails();
      },
      transition: Transition.fadeIn),
-    // GetPage(name: boardinPass, page: () => const BoardingPass()),
+     
+     GetPage(name: signPOD, page: () {
+       return const SignPOD();
+     },
+     transition: Transition.fadeIn),
+
+     GetPage(name: clocking, page: () {
+       return const Clocking();
+     },
+     transition: Transition.fadeIn),
+
+     GetPage(name: vehicleCheck, page: () {
+       return const VehicleCheck();
+     },
+     transition: Transition.fadeIn),
   
     // GetPage(
     //   name: popularItems, page: () {

@@ -1,6 +1,9 @@
 
 
+
+
 import 'package:flutter/material.dart';
+
 
 import '../Dimensions.dart';
 import '../app_colors.dart';
@@ -53,7 +56,7 @@ final ButtonStyle smallButton = ElevatedButton.styleFrom(
 
     
     shape: RoundedRectangleBorder(
-    side: BorderSide(color: Colors.white),
+    //side: BorderSide(color: Colors.white),
     borderRadius: BorderRadius.circular(Dimensions.height15),),
     foregroundColor: AppColors.activeTile,
     backgroundColor: AppColors.activeTile,
@@ -80,3 +83,5 @@ final ButtonStyle whiteButton = ElevatedButton.styleFrom(
     //maximumSize: Size(Dimensions.height20*15, Dimensions.height20*6)
 
 );
+
+

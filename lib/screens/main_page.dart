@@ -56,7 +56,7 @@ class MainPage extends StatelessWidget {
                   ),
                  
                   SizedBox(height: Dimensions.height20,),
-                  HeadingText(text: "#SK21BH10",size: Dimensions.font16,fontWeight: FontWeight.w500,color: AppColors.mainColor,)
+                  HeadingText(text: "#SK21BH10",size: Dimensions.font16,fontWeight: FontWeight.w800,color: AppColors.mainColor,)
                 ],
               ),
             ),
@@ -71,14 +71,19 @@ class MainPage extends StatelessWidget {
             children: [
               Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img1.png"),fit: BoxFit.cover)
-                  ),),
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(RoutesHelper.getVehicleCheck());
+                  },
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: DecorationImage(image: AssetImage("assets/images/img1.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
                 Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),

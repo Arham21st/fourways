@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fourways/routes/routes_helper.dart';
 
 import '../../utils/Dimensions.dart';
 import '../../utils/app_colors.dart';
 import '../../utils/widgets/widgets.dart';
+import 'package:get/get.dart';
 
 class InProgessJobs extends StatefulWidget {
 
@@ -14,6 +16,7 @@ class InProgessJobs extends StatefulWidget {
 
 class _InProgessJobsState extends State<InProgessJobs> {
   bool signPOD = true;
+  bool markAsComplete = true;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +26,7 @@ class _InProgessJobsState extends State<InProgessJobs> {
       return Padding(padding: EdgeInsets.all(Dimensions.height10),
       child: Container(
         width: double.maxFinite,
-        height: Dimensions.height20*15,
+        height: Dimensions.height20*14,
         decoration: BoxDecoration(
           color: AppColors.activeTile,
           borderRadius: BorderRadius.circular(Dimensions.height20)
@@ -36,44 +39,63 @@ class _InProgessJobsState extends State<InProgessJobs> {
               SizedBox(height: Dimensions.height20,),
               HeadingText(text: "HB Project Ltd",color: Colors.white,size: Dimensions.font20,fontWeight: FontWeight.bold,),
               SizedBox(height: Dimensions.height5,),
-              HeadingText(text: "Anytime 14 yard open exchange",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
+              HeadingText(text: "Anytime 14 yard open exchange",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Tip Site ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,), 
-                  HeadingText(text: "Home Ltd.",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
+                  HeadingText(text: "Tip Site:",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,), 
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Home Ltd.",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),
                 ],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Grade ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
-                  HeadingText(text: "Mixed C & D",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
+                  HeadingText(text: "Grade:   ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Mixed C & D",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),
                 ],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Status ",color: Colors.grey.shade200,size: Dimensions.font16,fontWeight: FontWeight.w600,),
-                  HeadingText(text: "Sign POD",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
-                ],
+                  HeadingText(text: "Status:  ",color: Colors.grey.shade200,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Sign POD",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),],
               ),
               SizedBox(height: Dimensions.height5,),
               Row(
                 children: [
-                  HeadingText(text: "Notes ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.normal,),
-                  HeadingText(text: "Type your notes here...",color: Colors.white,size: Dimensions.height20,fontWeight: FontWeight.bold,),
-                
-                ],
+                  HeadingText(text: "Notes:   ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
+                    child: HeadingText(text: "Type your notes here...",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                  ),],
               ),
+              
               SizedBox(height: Dimensions.height20,),
               Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            ElevatedButton(onPressed: () {
+            ElevatedButton(
+              
+              onPressed: () {
+                
+
+
               setState(() {
                 signPOD=false;
-              });
+                markAsComplete=!markAsComplete;},
+              );
+              
+             signPOD==false && markAsComplete==true?Get.toNamed(RoutesHelper.getSignPOD()):null;
+
               
             }, child: signPOD==true? HeadingText(text: "Sign POD",
             color: AppColors.mainColor,

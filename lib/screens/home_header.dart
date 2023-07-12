@@ -7,11 +7,12 @@ import 'package:line_icons/line_icons.dart';
 import 'package:get/get.dart';
 class HomeHeader extends StatelessWidget {
   
-  dynamic data;
-  bool? jobText;
+  dynamic backwaardRoute;
+  bool? isText;
   bool? refreshIcon;
+  String? text;
   
-  HomeHeader({super.key, this.data,this.jobText=false,this.refreshIcon=false});
+  HomeHeader({super.key, this.backwaardRoute,this.isText=false,this.refreshIcon=false,this.text="Jobs"});
 
   @override
   Widget build(BuildContext context) {
@@ -30,12 +31,12 @@ class HomeHeader extends StatelessWidget {
                     children: [
                       InkWell(
                         onTap: () {
-                          Get.toNamed(data);
+                          Get.toNamed(backwaardRoute);
                         },
                         child: Image(image: AssetImage("assets/images/Slide Up.png"))
                         ),
-                        if(jobText==true)
-                        HeadingText(text: "Jobs",size: Dimensions.font20,fontWeight: FontWeight.bold,)
+                        if(isText==true)
+                        HeadingText(text: text.toString(),size: Dimensions.font20,fontWeight: FontWeight.bold,)
                     ],
                   ),
                   SizedBox(height: Dimensions.height30,),
