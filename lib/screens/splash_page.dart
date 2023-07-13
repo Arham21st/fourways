@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 
 import '../routes/routes_helper.dart';
-import '../utils/app_colors.dart';
 import '../utils/dimensions.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -60,7 +59,7 @@ class _SplashScreenState extends State<SplashScreen> with TickerProviderStateMix
       body: SafeArea(
         bottom: false,
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage("assets/images/background.png"),  // Replace with the actual path and file name of your image
             fit: BoxFit.cover,

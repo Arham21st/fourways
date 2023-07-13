@@ -47,7 +47,7 @@ class Dimensions{
  static double bottomBar = screenHeight/7.233;
  static double textHeight = screenHeight/4.02;
 
- static double ExpandedAppBar = screenHeight/2.8;
+ static double expandedAppBar = screenHeight/2.8;
 
 
 

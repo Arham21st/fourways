@@ -66,7 +66,8 @@ class _ClockingState extends State<Clocking> {
                
           
                 
-              }, child: isClockedIn==false? HeadingText(text: "Clocked In",
+              },
+              style: whiteButton, child: isClockedIn==false? HeadingText(text: "Clocked In",
               color: AppColors.mainColor,
               size: Dimensions.font16,
               fontWeight: FontWeight.w600,):Column(
@@ -80,16 +81,15 @@ class _ClockingState extends State<Clocking> {
                   size: Dimensions.font16,
                   fontWeight: FontWeight.w600,),
                 ],
-              ),
-              style: whiteButton,),
+              ),),
               
               ElevatedButton(onPressed: () {
                 
-              }, child: HeadingText(text: "Checked Out",
+              },
+              style: smallButton, child: HeadingText(text: "Checked Out",
               color: Colors.white,
               size: Dimensions.font16,
-              fontWeight: FontWeight.w600,),
-              style: smallButton,),
+              fontWeight: FontWeight.w600,),),
             ],
                   ),
           ),

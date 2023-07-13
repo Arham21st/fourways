@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:fourways/routes/routes_helper.dart';
 import 'package:fourways/utils/app_colors.dart';
 import 'package:fourways/utils/dimensions.dart';
 import 'package:fourways/utils/widgets/widgets.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:get/get.dart';
+
+
+// ignore: must_be_immutable
 class HomeHeader extends StatelessWidget {
   
   dynamic backwaardRoute;
@@ -33,7 +34,7 @@ class HomeHeader extends StatelessWidget {
                         onTap: () {
                           Get.toNamed(backwaardRoute);
                         },
-                        child: Image(image: AssetImage("assets/images/Slide Up.png"))
+                        child: const Image(image: AssetImage("assets/images/Slide Up.png"))
                         ),
                         if(isText==true)
                         HeadingText(text: text.toString(),size: Dimensions.font20,fontWeight: FontWeight.bold,)

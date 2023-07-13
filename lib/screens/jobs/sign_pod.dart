@@ -3,9 +3,7 @@ import 'package:fourways/routes/routes_helper.dart';
 import 'package:fourways/screens/home_header.dart';
 import 'package:fourways/utils/dimensions.dart';
 import 'package:fourways/utils/widgets/image_input.dart';
-import 'package:fourways/utils/widgets/text_field.dart';
 import 'package:fourways/utils/widgets/widgets.dart';
-import 'package:get/get.dart';
 
 class SignPOD extends StatefulWidget {
   const SignPOD({super.key});

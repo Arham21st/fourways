@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:fourways/routes/routes_helper.dart';
 import 'package:fourways/screens/home_header.dart';
-import 'package:fourways/screens/jobs/Pending_jobs.dart';
+import 'package:fourways/screens/jobs/pending_jobs.dart';
 import 'package:fourways/screens/jobs/completed_jobs.dart';
 import 'package:fourways/screens/jobs/in_progress_jobs.dart';
 import 'package:fourways/screens/jobs/to_do_jobs.dart';
-import 'package:fourways/utils/app_colors.dart';
 import 'package:fourways/utils/dimensions.dart';
 import 'package:fourways/utils/widgets/widgets.dart';
-import 'package:get/get.dart';
 
 class JobsDetails extends StatefulWidget {
   const JobsDetails({super.key});
@@ -25,10 +23,10 @@ class _JobsDetailsState extends State<JobsDetails> {
       body: SafeArea(
         child: Column(
         children: [
-          SizedBox(height: Dimensions.height10,),
+          
           HomeHeader(backwaardRoute: RoutesHelper.getMainPage(),isText: true,refreshIcon: true,),
           SizedBox(height: Dimensions.height10,),
-          Container(
+          SizedBox(
               height: Dimensions.height20*2,
               child: ListView.builder(
                 shrinkWrap: true,
@@ -47,8 +45,8 @@ class _JobsDetailsState extends State<JobsDetails> {
                       child: Container(
                         padding: EdgeInsets.all(Dimensions.height10),
                         decoration: BoxDecoration(
-                          border: index!=selectedItem? Border.all(color: Colors.black,width: 0.5): Border(),
-                          color: index==selectedItem? Color.fromARGB(255, 168, 210, 159): Colors.white,
+                          border: index!=selectedItem? Border.all(color: Colors.black,width: 0.5): const Border(),
+                          color: index==selectedItem? const Color.fromARGB(255, 168, 210, 159): Colors.white,
                           borderRadius: BorderRadius.circular(Dimensions.height10)
                         ),
                         child: index==0?FittedBox(
@@ -74,12 +72,12 @@ class _JobsDetailsState extends State<JobsDetails> {
             Expanded(
               child: 
               selectedItem==0?
-              PendingJobs():
+              const PendingJobs():
               selectedItem==1?
-              ToDoJobs():
+              const ToDoJobs():
               selectedItem==2?
-              InProgessJobs():
-              CompletedJobs()
+              const InProgessJobs():
+              const CompletedJobs()
               )
         ],
       )

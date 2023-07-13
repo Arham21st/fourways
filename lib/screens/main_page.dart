@@ -27,9 +27,9 @@ class MainPage extends StatelessWidget {
                   SizedBox(height: Dimensions.height20,),
                   InkWell(
                     onTap: () {
-                      Get.toNamed(RoutesHelper.getVehicleDetails());
+                      Get.toNamed(RoutesHelper.getInitial());
                     },
-                    child: Image(image: AssetImage("assets/images/Slide Up.png"))),
+                    child: const Image(image: AssetImage("assets/images/Slide Up.png"))),
                   SizedBox(height: Dimensions.height30,),
                   HeadingText(text: "Welcome,",size: Dimensions.font20,fontWeight: FontWeight.w600,),
                   HeadingText(text: "John Doe",fontWeight: FontWeight.w600,),
@@ -39,19 +39,19 @@ class MainPage extends StatelessWidget {
                     children: [
                       ElevatedButton(onPressed: () {
                         
-                      }, child: HeadingText(text: "Change Vehicle",
+                      },
+                      style: whiteButton, child: HeadingText(text: "Sync All",
                       color: AppColors.mainColor,
                       size: Dimensions.font16,
-                      fontWeight: FontWeight.w600,),
-                      style: whiteButton,),
+                      fontWeight: FontWeight.w600,),),
                       
                       ElevatedButton(onPressed: () {
                         
-                      }, child: HeadingText(text: "Change Vehicle",
+                      },
+                      style: smallButton, child: HeadingText(text: "Change Vehicle",
                       color: Colors.white,
                       size: Dimensions.font16,
-                      fontWeight: FontWeight.w600,),
-                      style: smallButton,),
+                      fontWeight: FontWeight.w600,),),
                     ],
                   ),
                  
@@ -81,31 +81,64 @@ class MainPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(Dimensions.height20),
-                      image: DecorationImage(image: AssetImage("assets/images/img1.png"),fit: BoxFit.cover)
+                      image: const DecorationImage(image: AssetImage("assets/images/img1.png"),fit: BoxFit.cover)
                     ),),
                 ),
               ),
                 Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img2.png"),fit: BoxFit.cover)
-                  ),),
+                child: InkWell(
+                  onTap: () {
+                    showDialog(context: context, builder: (context){
+                      return AlertDialog(
+
+                        elevation: 7,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.height15)),
+                        backgroundColor: AppColors.activeTile,
+                        title: HeadingText(text: "Are you sure to confirm this vehicle?",size: Dimensions.font20,fontWeight: FontWeight.bold,
+                        color: Colors.white,),
+                        actions: [
+
+                          TextButton(onPressed: () {
+                             Get.toNamed(RoutesHelper.getVehicleCheck());
+                          }, child: HeadingText(text: "Check Agian",size: Dimensions.font20,fontWeight: FontWeight.bold,color: Colors.white,)),
+
+                          TextButton(onPressed: () {
+                             Get.toNamed(RoutesHelper.getJobs());
+                          },child: HeadingText(text: "Confirm",size: Dimensions.font20,fontWeight: FontWeight.bold,color: Colors.white,)),
+                          
+                          
+                        ],
+                      );
+                    }
+                    );
+                    
+                  },
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: const DecorationImage(image: AssetImage("assets/images/img2.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
                Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img3.png"),fit: BoxFit.cover)
-                  ),),
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(RoutesHelper.getClocking());
+                  },
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: const DecorationImage(image: AssetImage("assets/images/img3.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
               InkWell(
                 onTap: () {
@@ -119,31 +152,65 @@ class MainPage extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.grey,
                       borderRadius: BorderRadius.circular(Dimensions.height20),
-                      image: DecorationImage(image: AssetImage("assets/images/img4.png"),fit: BoxFit.cover)
+                      image: const DecorationImage(image: AssetImage("assets/images/img4.png"),fit: BoxFit.cover)
                     ),),
                 ),
               ),
               Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img5.png"),fit: BoxFit.cover)
-                  ),),
+                child: InkWell(
+                  onTap: () {
+                    Get.toNamed(RoutesHelper.getJobs());
+                  },
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: const DecorationImage(image: AssetImage("assets/images/img5.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
               Padding(
                 padding:  EdgeInsets.only(left:Dimensions.height20,right: Dimensions.height20,top: Dimensions.height10,bottom: Dimensions.height10),
-                child: Container(
-                  
-                  
-                  decoration: BoxDecoration(
-                    color: Colors.grey,
-                    borderRadius: BorderRadius.circular(Dimensions.height20),
-                    image: DecorationImage(image: AssetImage("assets/images/img6.png"),fit: BoxFit.cover)
-                  ),),
+                child: InkWell(
+                  onTap: () {
+                    showDialog(context: context, builder: (context){
+                      return AlertDialog(
+
+                        elevation: 7,
+                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.height15)),
+                        backgroundColor: AppColors.activeTile,
+                        title: HeadingText(text: "Do you want to finish your day?",size: Dimensions.font20,fontWeight: FontWeight.bold,
+                        color: Colors.white,),
+                        actions: [
+
+                          TextButton(onPressed: () {
+                             Get.toNamed(RoutesHelper.getMainPage());
+                          }, child: HeadingText(text: "No",size: Dimensions.font20,fontWeight: FontWeight.bold,color: Colors.white,)),
+
+                          TextButton(onPressed: () {
+                             Get.toNamed(RoutesHelper.getInitial());
+                          },child: HeadingText(text: "Yes",size: Dimensions.font20,fontWeight: FontWeight.bold,color: Colors.white,)),
+                          
+                          
+                        ],
+                      );
+                    }
+                    );
+                    
+                  },
+
+                  child: Container(
+                    
+                    
+                    decoration: BoxDecoration(
+                      color: Colors.grey,
+                      borderRadius: BorderRadius.circular(Dimensions.height20),
+                      image: const DecorationImage(image: AssetImage("assets/images/img6.png"),fit: BoxFit.cover)
+                    ),),
+                ),
               ),
              
             ],),

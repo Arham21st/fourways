@@ -25,7 +25,7 @@ class _LoginPageState extends State<LoginPage> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: Dimensions.height20*5,),
-            Image(image: AssetImage("assets/images/logo.png")),
+            const Image(image: AssetImage("assets/images/logo.png")),
             SizedBox(height: Dimensions.height20*2,),
             Row(
               children: [
@@ -50,7 +50,7 @@ class _LoginPageState extends State<LoginPage> {
               padding: EdgeInsets.only(left: Dimensions.height20,right: Dimensions.height20),
               child: ElevatedButton(onPressed: () {
                 Get.toNamed(RoutesHelper.getInitial());
-              }, child: HeadingText(text: "Login",color: Colors.white,fontWeight: FontWeight.w400,size: Dimensions.font16,),style: mainButton,),
+              },style: mainButton, child: HeadingText(text: "Login",color: Colors.white,fontWeight: FontWeight.w400,size: Dimensions.font16,),),
             )
           ],
         )),

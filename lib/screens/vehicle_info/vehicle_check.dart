@@ -4,7 +4,6 @@ import 'package:fourways/screens/home_header.dart';
 import 'package:fourways/utils/app_colors.dart';
 import 'package:fourways/utils/dimensions.dart';
 import 'package:fourways/utils/widgets/widgets.dart';
-import 'package:get/get.dart';
 
 class VehicleCheck extends StatefulWidget {
   const VehicleCheck({super.key});
@@ -14,8 +13,20 @@ class VehicleCheck extends StatefulWidget {
 }
 
 class _VehicleCheckState extends State<VehicleCheck> {
-  int currentIndex=0;
-  bool newValue=false;
+ List <Map> items = [
+    {"name": "Vehicle Name 1", "isChecked": false},
+    {"name": "Vehicle Name 2", "isChecked": false},
+    {"name": "Vehicle Name 3", "isChecked": false},
+    {"name": "Vehicle Name 4", "isChecked": false},
+    {"name": "Vehicle Name 5", "isChecked": false},
+    {"name": "Vehicle Name 6", "isChecked": false},
+    {"name": "Vehicle Name 7", "isChecked": false},
+    {"name": "Vehicle Name 8", "isChecked": false},
+    {"name": "Vehicle Name 9", "isChecked": false},
+    {"name": "Vehicle Name 10", "isChecked": false},
+   
+  ];
+  String? selectedValue;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,47 +36,54 @@ class _VehicleCheckState extends State<VehicleCheck> {
           HomeHeader(backwaardRoute: RoutesHelper.getMainPage(),
           isText: true,
           text: "Vehicle Check",),
-          SizedBox(height: Dimensions.height10,),
-          HeadingText(text: "swipe left to mark red",
-          size: Dimensions.font16,
-          color: Colors.grey.shade500,
-          fontWeight: FontWeight.bold,),
+          Container(
+            color: Colors.grey.shade100,
+            height: Dimensions.height10,),
+          Container(
+            color: Colors.grey.shade100,
+            height: Dimensions.height30,
+            width: double.maxFinite,
+            child: Center(
+              child: HeadingText(text: "swipe left to mark red",
+              size: Dimensions.font16,
+              color: Colors.grey.shade500,
+              fontWeight: FontWeight.bold,),
+            ),
+          ),
           //SizedBox(height: Dimensions.height10,),
           Expanded(
-            child: ListView.builder(
-              itemCount: 10,
-              itemBuilder: (context,index){
-                return Padding(
-                  padding: EdgeInsets.only(left: Dimensions.height20*1.5,right: Dimensions.height20*1.5),
-                  child: Container(
-                    padding: EdgeInsets.symmetric(vertical: Dimensions.height10),
-                    child: CheckboxListTile(
+            child: SingleChildScrollView(
+              child: Column(
+                children: items.map((e) => 
+                Padding(
+                  padding: EdgeInsets.symmetric(horizontal: Dimensions.height20,vertical: Dimensions.height10),
+                  child: CheckboxListTile(
+                    value: e["isChecked"], 
+                    onChanged: (value) {
+                    e["isChecked"]= value;
+                    selectedValue=e["name"];
+                    setState(() {
                       
-                      
-                      onChanged: (value) {
-                       
-                        setState(() {
-                          currentIndex=index;
-                          newValue=!newValue;
-                        });
-                      },
-                      value: newValue,
-                      
-                      checkboxShape: CircleBorder(side: BorderSide(style: BorderStyle.solid,color: AppColors.activeTile)),
-                      fillColor: currentIndex==index? const MaterialStatePropertyAll(Colors.white): MaterialStatePropertyAll(AppColors.activeTile),
-                      checkColor: currentIndex==index? AppColors.activeTile: AppColors.activeTile,
-                      activeColor: currentIndex==index?Colors.white:AppColors.activeTile,
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.height20)),
-                      tileColor: currentIndex==index?AppColors.activeTile: Colors.white,
-                      title: HeadingText(text: "All ext lights and indicators",
-                      color: currentIndex==index?Colors.white:Colors.black,
-                      size: Dimensions.font20,fontWeight: FontWeight.bold,),
-                      
-                    ),
+                    });
+                  },
+                  //checkBox
+                  activeColor: selectedValue==e["name"]?Colors.white: AppColors.activeTile,
+                  checkColor: selectedValue==e["name"]?AppColors.activeTile:Colors.white,
+                  checkboxShape: const CircleBorder(),
+                  side:  selectedValue==e["name"]?const BorderSide(strokeAlign: BorderSide.strokeAlignOutside,color: Colors.white) :
+                  const BorderSide(color: AppColors.activeTile,strokeAlign: BorderSide.strokeAlignOutside),
+                  //listTile
+                  title: HeadingText(text: e["name"].toString(),size: Dimensions.font20,fontWeight: FontWeight.bold,
+                  color: selectedValue==e["name"]?Colors.white:Colors.black,),
+                  tileColor: selectedValue==e["name"]?AppColors.activeTile: Colors.white,
+                  
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(Dimensions.height20)),
+
                   ),
-                );
-              }
-              )
+                )
+                ).toList(),
+              ),
+            )
               )
         ],
         )

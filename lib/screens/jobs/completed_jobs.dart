@@ -66,14 +66,37 @@ class CompletedJobs extends StatelessWidget {
                   HeadingText(text: "Notes:   ",color: Colors.grey.shade100,size: Dimensions.font16,fontWeight: FontWeight.w600,),
                   Padding(
                     padding: EdgeInsetsDirectional.fromSTEB(Dimensions.height20, 0, 0, 0),
-                    child: HeadingText(text: "Type your notes here...",color: Colors.white,size: Dimensions.height20/1.15,fontWeight: FontWeight.bold,),
+                    child: SizedBox(
+                      
+                      width: Dimensions.height20*13,
+                      height: Dimensions.height30,
+                      child:  TextField(
+
+                        maxLines: 1,
+                        style: TextStyle(fontFamily: "Heading",color: Colors.white,fontSize: Dimensions.font16,fontWeight: FontWeight.w600,height: 0.5),
+                        cursorColor: Colors.white,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          
+                          contentPadding: const EdgeInsets.all(0),
+                          fillColor: AppColors.activeTile,
+                          filled: true,
+                          enabledBorder:const OutlineInputBorder(borderSide: BorderSide.none),
+                          focusedBorder: const OutlineInputBorder(borderSide: BorderSide.none),
+                          hintText: "Type your notes here...",
+                          hintStyle: TextStyle(fontFamily: "Heading",color: Colors.white,fontSize: Dimensions.font16,fontWeight: FontWeight.w600,height: 0.5),
+                          
+                        ),
+                      ),
+                    ),
+                 
                   ),],
               ),
               
               SizedBox(height: Dimensions.height20,),
               ElevatedButton(onPressed: () {
                 Get.toNamed(RoutesHelper.getClocking());
-              }, child: HeadingText(text: "View",size: Dimensions.font16,color: AppColors.mainColor,fontWeight: FontWeight.bold),style: whiteButton,)
+              },style: whiteButton, child: HeadingText(text: "View",size: Dimensions.font16,color: AppColors.mainColor,fontWeight: FontWeight.bold),)
        
             ],
           ),

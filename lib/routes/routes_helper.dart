@@ -8,17 +8,14 @@ import 'package:fourways/screens/login_page.dart';
 import 'package:fourways/screens/main_page.dart';
 import 'package:fourways/screens/vehicle_info/select_vehicle.dart';
 import 'package:fourways/screens/vehicle_info/vehicle_check.dart';
-import 'package:fourways/screens/vehicle_info/vehicle_details.dart';
 import 'package:get/get.dart';
 
-import '../screens/login_page.dart';
 import '../screens/splash_page.dart';
 
 class RoutesHelper {
   static const String splash = '/splash-page';
   static const String initial = '/';
   static const String login = '/login-page';
-  static const String details = '/vehicle-details';
   static const String mainPage = '/dashboard';
   static const String jobs = '/jobs';
   static const String signPOD = '/sign-POD';
@@ -29,7 +26,6 @@ class RoutesHelper {
   static String getSplash() => splash;
   static String getInitial() => initial;
   static String getLogin() => login;
-  static String getVehicleDetails() => details;
   static String getMainPage() => mainPage;
   static String getJobs() => jobs;
   static String getSignPOD() => signPOD;
@@ -55,11 +51,6 @@ class RoutesHelper {
       return const LoginPage();
     },
     transition: Transition.fadeIn),
-     
-     GetPage(name: details, page: () {
-       return const VehicleDetails();
-     },
-     transition: Transition.fadeIn),
     
      GetPage(name: mainPage, page: () {
        return const MainPage();

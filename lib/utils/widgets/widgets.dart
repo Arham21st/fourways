@@ -72,7 +72,7 @@ final ButtonStyle whiteButton = ElevatedButton.styleFrom(
 
     
     shape: RoundedRectangleBorder(
-    side: BorderSide(color: AppColors.mainColor,strokeAlign: BorderSide.strokeAlignInside),
+    side: const BorderSide(color: AppColors.mainColor,style: BorderStyle.none, strokeAlign: BorderSide.strokeAlignInside),
     borderRadius: BorderRadius.circular(Dimensions.height15),),
     foregroundColor: AppColors.activeTile,
     backgroundColor: Colors.white,
